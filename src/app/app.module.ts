@@ -21,6 +21,7 @@ import { LogoutComponent } from './auth/logout/logout.component';
 import { BookCatalogComponent } from './shared/books/book-catalog/book-catalog.component';
 import { ProfileComponent } from './auth/profile/profile.component';
 import { NewBookComponent } from './shared/books/new-book/new-book.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { NewBookComponent } from './shared/books/new-book/new-book.component';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
     
   ],
   providers: [],

@@ -8,12 +8,12 @@ import { BookCatalogComponent } from './shared/books/book-catalog/book-catalog.c
 import { NewBookComponent } from './shared/books/new-book/new-book.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   pathMatch: 'full',
-  //   // redirectTo: 'login'
-  //   component: BookCatalogComponent
-  // },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'login'
+    // component: BookCatalogComponent
+  },
   {
     path: 'add',
     component: NewBookComponent

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="form-container">
+        <div class="title">Create Account</div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter username</mat-label>
+                <input matInput formControlName="username">
+                <mat-error>Username is required!</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Enter email</mat-label>
+                <input matInput formControlName="email">
+                <mat-error *ngIf="registerForm.controls.email.invalid">
+                    {{registerForm.controls.email.hasError('required')?'Email is required' : 'Please enter a valid email'}}
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Enter password</mat-label>
+                <input type="password" matInput formControlName="password">
+                <mat-error *ngIf="registerForm.controls.password.invalid">
+                    {{registerForm.controls.password.hasError('required')?'Password is required' : 'Password should be at least 5 characters long'}}
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Confirm password</mat-label>
+                <input type="password" matInput formControlName="repass">
+                <!-- <mat-error *ngIf="registerForm.controls.password.invalid">
+                    {{registerForm.controls.password.hasError('required')?'Password is required' : 'Password should be at least 6 characters long'}}
+                </mat-error> -->
+            </mat-form-field>
+             <div class="buttons-container">
+            <button [disabled]="registerForm.invalid" class="login-button" type="submit" mat-raised-button>Register</button>
+            <p>Already have an account?</p>
+            <button routerLink="/login" mat-button>Login</button>
+        </div>
+        </form>
+       
+    </div>
+</div>

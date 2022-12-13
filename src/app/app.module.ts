@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopbarComponent } from './core/topbar/topbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './auth/login/login.component';
@@ -27,7 +26,6 @@ import { BookCardComponent } from './shared/books/book-card/book-card.component'
 @NgModule({
   declarations: [
     AppComponent,
-    TopbarComponent,
     LoginComponent,
     RegisterComponent,
     LogoutComponent,

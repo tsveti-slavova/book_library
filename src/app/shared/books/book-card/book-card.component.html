@@ -1,0 +1,43 @@
+<!-- <p>book-card works!</p> -->
+<!-- <mat-card>
+    <img
+      mat-card-image
+      src="assets/images/book.png"
+      alt="Photo of a Shiba Inu"
+    />
+  
+    <mat-card-content>
+      <p>
+        <strong>
+          A dog is a domestic mammal of the family Canidae and the order
+          Carnivora.</strong
+        >
+        Its scientific name is Canis lupus familiaris. Dogs are a subspecies of
+        the gray wolf, and they are also related to foxes and jackals. Dogs are
+        one of the two most ubiquitous and most popular domestic animals in the
+        world.
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button>Like ❤️</button>
+      <button mat-button>share 👍</button>
+    </mat-card-actions>
+  </mat-card> -->
+
+  <mat-card>
+   <mat-card-header>
+    <!-- <div mat-card-avatar class="book-cover-image"></div> -->
+    <mat-card-title>Title: {{book.title}} </mat-card-title>
+    <mat-card-subtitle>Author: {{book.author}}</mat-card-subtitle>
+   </mat-card-header>
+   <img mat-card-lg-image src="https://almabooks.com/wp-content/uploads/2016/10/9781847493699.jpg" alt="Cover picture">
+   <mat-card-content>
+    {{book.description}} 
+   </mat-card-content>
+   <mat-card-actions>
+    <button mat-button>Like</button>
+    <button mat-button>Edit</button>
+    <button mat-button>Delete</button>
+  </mat-card-actions>
+
+  </mat-card>

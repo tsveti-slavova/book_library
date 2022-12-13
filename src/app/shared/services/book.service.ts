@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { tap } from 'rxjs';
 import { IBook } from '../interfaces/book';
 
 @Injectable({
@@ -20,9 +21,18 @@ export class BookService {
 
   fetchBooksData() {
     const projectId = 'book-library-fb8bd';
-    return this.httpClient.get(`https://${projectId}-default-rtdb.firebaseio.com/Books.json`
+    return this.httpClient
+    .get<{ config: any; data: IBook[]; usage: any }>(
+      `https://${projectId}-default-rtdb.firebaseio.com/Books.json`)
+    .pipe(
+      tap((response) => {
+        this.booksData = response.data;
+      })
     );
   }
 
-  
+  // loadBooks() {
+  //   const projectId = 'book-library-fb8bd'
+  //   return this.httpClient.get<IBook[]>(`https://${projectId}-default-rtdb.firebaseio.com/Books.json`)
+  // }
 }

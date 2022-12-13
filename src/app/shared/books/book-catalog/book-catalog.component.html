@@ -1,6 +1,7 @@
-<p>book-catalog works!</p>
+<!-- <p>book-catalog works!</p> -->
+<app-book-card></app-book-card>
 
-  <div *ngFor="let book of booksData">
+  <!-- <div *ngFor="let book of booksData">
    
   <mat-card>
     <mat-card-header>
@@ -18,4 +19,27 @@
         <button mat-button>Delete</button>
     </mat-card-actions> 
   </mat-card>
-</div>
+</div> -->
+<!-- <div *ngFor="let book of booksData ; let i = index">
+
+  <app-book-card></app-book-card>
+
+</div> -->
+
+<!-- <ul>
+  <li *ngFor="let book of booksData">
+    {{ book.$value }}
+  </li>
+</ul> -->
+<!-- <mat-card>
+<mat-card-header>
+  <mat-card-title>Book Catalog</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+  <div *ngFor="let item of booksData | keyvalue">
+    Key: <b>{{item.key}}</b> and Value: <b>{{item.value}}</b>
+</div>  
+
+</mat-card-content>
+</mat-card> -->

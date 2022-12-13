@@ -22,6 +22,12 @@ export class BookCatalogComponent implements OnInit {
       })
     }
 
+    // this.bookService.loadBooks().subscribe({
+    //   next: (value) => {
+    //     this.booksData = value;
+    //   }
+    // })
+
 }
 
 }

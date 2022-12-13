@@ -22,6 +22,7 @@ import { BookCatalogComponent } from './shared/books/book-catalog/book-catalog.c
 import { ProfileComponent } from './auth/profile/profile.component';
 import { NewBookComponent } from './shared/books/new-book/new-book.component';
 import { MatCardModule } from '@angular/material/card';
+import { BookCardComponent } from './shared/books/book-card/book-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatCardModule } from '@angular/material/card';
     LogoutComponent,
     BookCatalogComponent,
     ProfileComponent,
-    NewBookComponent
+    NewBookComponent,
+    BookCardComponent
   ],
   imports: [
     BrowserModule,

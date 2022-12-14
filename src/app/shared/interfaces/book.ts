@@ -3,5 +3,6 @@ export interface IBook {
     author: string,
     genre: string,
     description: string,
-    image: string
+    image: string,
+    id?: string
 }

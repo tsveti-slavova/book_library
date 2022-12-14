@@ -27,7 +27,7 @@
     </mat-card-actions>
   </mat-card> -->
 
-  <mat-card class="example-card">
+  <!-- <mat-card class="example-card">
     <img mat-card-image>
     <mat-card-header>
         <mat-card-title>Book Title</mat-card-title>
@@ -77,4 +77,106 @@
             SHARE 
         </button>
     </mat-card-actions>
-</mat-card>
+</mat-card> -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <!-- <form #postForm="ngForm" (ngSubmit)="onCreateBook(postForm.value)"> -->
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required
+            ngModel
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input
+            type="text"
+            class="form-control"
+            id="author"
+            required
+            ngModel
+            name="author"
+          />
+        </div>
+        <!-- <div class="form-group">
+          <label for="genre">Genre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="genre"
+            required
+            ngModel
+            name="genre"
+          />
+        </div> -->
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input
+            type="text"
+            class="form-control"
+            id="image"
+            required
+            ngModel
+            name="image"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            required
+            ngModel
+            name="description"
+          ></textarea>
+        </div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          
+        >
+          Send Book
+        </button>
+      </form>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <button class="btn btn-primary" (click)="onFetchBooks()">
+        Fetch Books
+      </button>
+      |
+      <button
+        class="btn btn-danger"
+        [disabled]="loadedBooks.length < 1"
+        (click)="onClearBooks()"
+      >
+        Clear Books
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <p *ngIf="loadedBooks.length < 1">No books available!</p>
+      <ul *ngIf="loadedBooks.length >=1">
+        <li *ngFor="let book of loadedBooks">
+          <h1>{{ book.title }}</h1>
+          <h2>{{ book.author }}</h2>
+          <h2>{{ book.image }}</h2>
+          <p>{{ book.description }} </p>
+        </li> 
+
+      </ul>
+    </div>
+  </div>
+</div>

@@ -9,25 +9,13 @@ import { BookService } from '../../services/book.service';
 })
 export class BookCatalogComponent implements OnInit {
 
-  booksData: IBook[] | null = null;
+  loadedBooks: IBook[] = [];
+
 
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
-    this.booksData = this.bookService.booksData;
-
-    if(!this.booksData?.length) {
-      this.bookService.fetchBooksData().subscribe((response) => {
-        console.log(response);
-      })
-    }
-
-    // this.bookService.loadBooks().subscribe({
-    //   next: (value) => {
-    //     this.booksData = value;
-    //   }
-    // })
-
+    this.bookService.fetchBooks();
 }
 
 }

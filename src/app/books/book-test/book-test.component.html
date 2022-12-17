@@ -1,0 +1,110 @@
+<!-- <p>book-test works!</p> -->
+<div class="container">
+    <!-- <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <form #postForm="ngForm" (ngSubmit)="onCreateBook(postForm.value)">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              required
+              ngModel
+              name="title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input
+              type="text"
+              class="form-control"
+              id="author"
+              required
+              ngModel
+              name="author"
+            />
+          </div>
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input
+              type="text"
+              class="form-control"
+              id="image"
+              required
+              ngModel
+              name="image"
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              required
+              ngModel
+              name="description"
+            ></textarea>
+          </div>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!postForm.valid"
+          >
+            Send Post
+          </button>
+        </form>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <button class="btn btn-primary" (click)="onFetchBooks()">
+          Fetch Posts
+        </button>
+        |
+        <button
+          class="btn btn-danger"
+          [disabled]="loadedBooks.length < 1"
+          (click)="onClearBooks()"
+        >
+          Clear Posts
+        </button>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <p *ngIf="loadedBooks.length < 1">No books available!</p>
+        <ul class="list-group" *ngIf="loadedBooks.length >= 1">
+            <!-- <li class="list-group-item" *ngFor="let book of loadedBooks"> -->
+                <!-- <h1>{{ book.title }}</h1>
+                <h2>{{ book.author }}</h2>
+                <img src={{ book.image }} alt="">
+                <p>{{ book.description }}</p>
+            </li> -->
+            <!-- <div class="card" style="width: 18rem;" *ngFor="let book of loadedBooks">
+                <img src={{ book.image }} class="card-img-top" alt="book-cover">
+                <div class="card-body">
+                  <h5 class="card-title">{{book.title}}</h5>
+                  <p class="card-text">{{book.description}}</p>
+                  <a href="#" class="btn btn-primary">Details</a>
+                </div>
+              </div> -->
+            
+              <div class="card" style="width: 18rem;" *ngFor="let book of loadedBooks">
+              <!-- <div class="card-deck"  *ngFor="let book of loadedBooks"> -->
+                <img src={{book.image}} alt="Picture" class="card-img-top">
+                <div class="card-body text-center">
+                  <h5 class="card-title">{{book.title}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{book.author}}</h6>
+                  <p class="card-text">{{book.description}}</p>
+                  <a class="card-link" href="#">Read more</a>
+                  <!-- <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a> -->
+                </div>
+              </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

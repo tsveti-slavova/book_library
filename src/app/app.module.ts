@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopbarComponent } from './core/topbar/topbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './auth/login/login.component';
@@ -21,17 +20,23 @@ import { LogoutComponent } from './auth/logout/logout.component';
 import { BookCatalogComponent } from './shared/books/book-catalog/book-catalog.component';
 import { ProfileComponent } from './auth/profile/profile.component';
 import { NewBookComponent } from './shared/books/new-book/new-book.component';
+import { MatCardModule } from '@angular/material/card';
+import { BookCardComponent } from './shared/books/book-card/book-card.component';
+import { HeaderComponent } from './core/header/header.component';
+// import { BookTestComponent } from './books/book-test/book-test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopbarComponent,
     LoginComponent,
     RegisterComponent,
     LogoutComponent,
     BookCatalogComponent,
     ProfileComponent,
-    NewBookComponent
+    NewBookComponent,
+    BookCardComponent,
+    HeaderComponent,
+    // BookTestComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,8 @@ import { NewBookComponent } from './shared/books/new-book/new-book.component';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
     
   ],
   providers: [],

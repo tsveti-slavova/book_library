@@ -1,1 +1,182 @@
-<p>new-book works!</p>
+<!-- <p>new-book works!</p>
+<p>book-card works!</p> -->
+
+
+<!-- <mat-card>
+    <img
+      mat-card-image
+      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+      alt="Photo of a Shiba Inu"
+    />
+  
+    <mat-card-content>
+      <p>
+        <strong>
+          A dog is a domestic mammal of the family Canidae and the order
+          Carnivora.</strong
+        >
+        Its scientific name is Canis lupus familiaris. Dogs are a subspecies of
+        the gray wolf, and they are also related to foxes and jackals. Dogs are
+        one of the two most ubiquitous and most popular domestic animals in the
+        world.
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button>Like ❤️</button>
+      <button mat-button>share 👍</button>
+    </mat-card-actions>
+  </mat-card> -->
+
+  <!-- <mat-card class="example-card">
+    <img mat-card-image>
+    <mat-card-header>
+        <mat-card-title>Book Title</mat-card-title>
+        <mat-card-subtitle> 
+            Book author
+        </mat-card-subtitle>
+        <mat-card-subtitle> 
+            Book genre
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            With the idea of imparting programming 
+            knowledge, Mr. Sandeep Jain, an IIT Roorkee 
+            alumnus started a dream, GeeksforGeeks. 
+            Whether programming excites you or you feel 
+            stifled, wondering how to prepare for 
+            interview questions or how to ace data 
+            structures and algorithms, GeeksforGeeks 
+            is a one-stop solution. With every tick of 
+            time, we are adding arrows in our quiver.
+            From articles on various computer science 
+            subjects to programming problems for practice,
+            from basic to premium courses, from technologies
+            to entrance examinations, we have been building
+            ample content with superior quality. In a short
+            span, we have built a community of 1 Million+ 
+            Geeks around the world, 20,000+ Contributors and
+            500+ Campus Ambassador in various colleges across
+            the nation. Our success stories include a lot of
+            students who benefitted in their placements and 
+            landed jobs at tech giants. Our vision is to 
+            build a gigantic network of geeks and we are 
+            only a fraction of it yet.
+        </p>
+  
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button style=
+                "background-color:blue; 
+                 color:white"> 
+            LIKE 
+        </button>
+        <button mat-button style=
+                "background-color:green; 
+                 color:white">
+            SHARE 
+        </button>
+    </mat-card-actions>
+</mat-card> -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <form #postForm="ngForm" (ngSubmit)="onCreateBook(postForm.value)">
+        <!-- <form #form="ngForm" (ngSubmit)="onSubmit(form)"> -->
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required
+            ngModel
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input
+            type="text"
+            class="form-control"
+            id="author"
+            required
+            ngModel
+            name="author"
+          />
+        </div>
+        <!-- <div class="form-group">
+          <label for="genre">Genre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="genre"
+            required
+            ngModel
+            name="genre"
+          />
+        </div> -->
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input
+            type="text"
+            class="form-control"
+            id="image"
+            required
+            ngModel
+            name="image"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            required
+            ngModel
+            name="description"
+          ></textarea>
+        </div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          
+        >
+          Add Book
+        </button>
+      </form>
+    </div>
+  </div>
+  <!-- <hr /> -->
+  <!-- <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <button class="btn btn-primary" (click)="onFetchBooks()">
+        Fetch Books
+      </button>
+      |
+      <button
+        class="btn btn-danger"
+        [disabled]="loadedBooks.length < 1"
+        (click)="onClearBooks()"
+      >
+        Clear Books
+      </button>
+    </div>
+  </div> -->
+  <!-- <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <p *ngIf="loadedBooks.length < 1">No books available!</p>
+      <ul *ngIf="loadedBooks.length >=1">
+        <li *ngFor="let book of loadedBooks">
+          <h1>{{ book.title }}</h1>
+          <h2>{{ book.author }}</h2>
+          <h2>{{ book.image }}</h2>
+          <p>{{ book.description }} </p>
+        </li> 
+
+      </ul>
+    </div>
+  </div> -->
+</div>

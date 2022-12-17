@@ -2,6 +2,7 @@ mat-card {
     max-width: 250px;
     background-size: cover;
     background-color:rgb(245, 239, 244);
+    margin: 10px;
   }
   
    

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { IBook } from '../../interfaces/book';
+import { BookService } from '../../services/book.service';
  
 @Component({
   selector: 'app-new-book',
@@ -12,44 +13,23 @@ import { IBook } from '../../interfaces/book';
 export class NewBookComponent implements OnInit {
   loadedBooks: IBook[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private bookService: BookService) { }
 
   ngOnInit(): void {
     // this.fetchBooks();
   }
 
 
-  onSubmit(form: NgForm) {
+  // onSubmit(form: NgForm) {
     
-    console.log(form.value)
+  //   console.log(form.value)
+  // }
+
+
+  onCreateBook = this.bookService.onCreateBook;
+  
   }
 
+  
 
-  onFetchBooks() {
-    this.fetchBooks();
-  }
 
-  onClearBooks() {
-
-  }
-
-  fetchBooks() {
-    this.http
-      .get<{ [key: string]: IBook}>('https://book-library-fb8bd-default-rtdb.firebaseio.com/Books.json')
-      .pipe(
-        map(responseData => {
-          const booksArray: IBook[] = [];
-          for (const key in responseData) {
-            if (responseData.hasOwnProperty(key)) {
-              booksArray.push({ ...responseData[key], id: key });
-            }
-          }
-          return booksArray;
-        })
-      )
-      .subscribe(books => {
-        // ...
-        this.loadedBooks = books;
-      });
-  }
-}

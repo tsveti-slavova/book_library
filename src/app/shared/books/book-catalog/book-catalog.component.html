@@ -1,23 +1,22 @@
-<!-- <p>book-catalog works!</p> -->
-<app-book-card></app-book-card>
 
-
-
-<!-- <div>
-  <mat-card *ngFor="let book of loadedBooks">
-    <mat-card-header>
-     <mat-card-title>Title: {{book.title}} </mat-card-title>
-     <mat-card-subtitle>Author: {{book.author}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-lg-image src="https://almabooks.com/wp-content/uploads/2016/10/9781847493699.jpg" alt="Cover picture">
-    <mat-card-content>
-     {{book.description}} 
-    </mat-card-content>
-    <mat-card-actions>
-     <button mat-button>Like</button>
-     <button mat-button>Edit</button>
-     <button mat-button>Delete</button>
-   </mat-card-actions>
- 
-   </mat-card>
-</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <p *ngIf="!loadedBooks">No books available!</p>
+      <ul class="list-group" *ngIf="loadedBooks">
+            <div class="card" style="width: 18rem;" *ngFor="let book of loadedBooks">
+            
+              <img src={{book.image}} alt="Picture" class="card-img-top">
+              <div class="card-body text-center">
+                <h5 class="card-title">{{book.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{book.author}}</h6>
+                <p class="card-text">{{book.description}}</p>
+                <a class="card-link" href="#">Read more</a>
+                <!-- <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a> -->
+              </div>
+            </div>
+      </ul>
+    </div>
+  </div>
+</div>

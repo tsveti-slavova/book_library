@@ -9,44 +9,41 @@ import { map } from 'rxjs/operators'
 })
 export class BookService {
   loadedBooks: IBook[] = [];
-  // private books: IBook[]= [];
 
-  // get booksData () {
-  //   return this.books;
-  // }
-
-  // set booksData (booksData) {
-  //   this.books = booksData;
-  // }
-
+ 
   constructor(private http: HttpClient) { }
 
+  onCreateBook(postData: IBook) {
+    // Send Http request
+    this.http.post<{ name: string }>('https://book-library-fb8bd-default-rtdb.firebaseio.com/Books.json', postData)
+    .subscribe(responseData => {
+      console.log(responseData);
+    })
+  }
 
-// onFetchBooks() {
-//   this.fetchBooks();
-// }
+  onFetchBooks() {
+    // Send Http request
+    this.fetchBooks();
+  }
 
-onClearBooks() {
+  
 
-}
-
-fetchBooks() {
-  this.http
-    .get<{ [key: string]: IBook}>('https://book-library-fb8bd-default-rtdb.firebaseio.com/Books.json')
-    .pipe(
-      map(responseData => {
-        const booksArray: IBook[] = [];
-        for (const key in responseData) {
-          if (responseData.hasOwnProperty(key)) {
-            booksArray.push({ ...responseData[key], id: key });
-          }
+  fetchBooks() {
+    this.http.get<{ [key: string]: IBook}>('https://book-library-fb8bd-default-rtdb.firebaseio.com/Books.json')
+    .pipe(map(responseData => {
+      const booksArray: IBook[] = [];
+      for(const key in responseData) {
+        if(responseData.hasOwnProperty(key)) {
+          booksArray.push({... responseData[key], id: key })
         }
-        return booksArray;
-      })
-    )
+      }
+      return booksArray;
+    }))
     .subscribe(books => {
-      // ...
       this.loadedBooks = books;
-    });
-}
+    })
+  }
+
+
+
 }

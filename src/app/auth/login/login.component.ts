@@ -4,6 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from 'src/environments/environment';
+import { IUser } from 'src/app/shared/interfaces/user';
 
 
 @Component({
@@ -13,11 +14,12 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginComponent implements OnInit {
 
+   
   constructor(
     private fb:FormBuilder, 
     private router: Router,
     private httpClient: HttpClient, 
-    private matSnackBar: MatSnackBar
+    private matSnackBar: MatSnackBar,
     ) { }
 
   ngOnInit(): void {}
@@ -57,5 +59,15 @@ export class LoginComponent implements OnInit {
       }
     });
   };
+
+  // get token() {
+  //   if(!this.user._tokenExpirationDate || new Date() > this.user._tokenExpirationDate) {
+  //     return null;
+  //   }
+  //   return this.user._token;
+  // }
+
+
+
 }
 

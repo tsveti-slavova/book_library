@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     console.log(this.loginForm.value);
+    // this.loginForm.reset();
 
     this.httpClient
     .post(

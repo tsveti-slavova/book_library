@@ -23,6 +23,9 @@ import { NewBookComponent } from './shared/books/new-book/new-book.component';
 import { MatCardModule } from '@angular/material/card';
 import { BookCardComponent } from './shared/books/book-card/book-card.component';
 import { HeaderComponent } from './core/header/header.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner/loading-spinner.component';
+import { SearchComponent } from './shared/search/search.component';
+// import { AuthComponent } from './auth/auth/auth.component';
 // import { BookTestComponent } from './books/book-test/book-test.component';
 
 @NgModule({
@@ -36,6 +39,9 @@ import { HeaderComponent } from './core/header/header.component';
     NewBookComponent,
     BookCardComponent,
     HeaderComponent,
+    LoadingSpinnerComponent,
+    SearchComponent,
+    // AuthComponent,
     // BookTestComponent
   ],
   imports: [

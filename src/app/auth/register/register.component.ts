@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  isLoading = false;
 
   registerForm = this.fb.group({
     username: ['', [Validators.required]],
@@ -32,6 +33,8 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     console.log(this.registerForm.value);
 
+    this.isLoading = true;
+
     this.httpClient
       .post(
       `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseApiKey}`, 
@@ -41,6 +44,7 @@ export class RegisterComponent implements OnInit {
         next: (response) => {
           console.log(response);
           this.registerForm.reset();
+          this.isLoading = false;
 
           this.matSnackBar.open('Account created successfully', 'OK', {
             verticalPosition: 'top',
@@ -52,11 +56,14 @@ export class RegisterComponent implements OnInit {
         },
         error: (error) => {
           let errorMessage = error.error.error.message;
+          // console.log(error);
+          this.isLoading = false;
 
           this.matSnackBar.open('Register failed! Email already exists!', 'OK', {
             verticalPosition: 'top',
             horizontalPosition: 'center',
             
+
           })
         }
       });

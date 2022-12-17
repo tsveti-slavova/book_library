@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators'
 })
 export class BookService {
   loadedBooks: IBook[] = [];
+  isFetching = false;
 
  
   constructor(private http: HttpClient) { }
@@ -40,6 +41,7 @@ export class BookService {
       return booksArray;
     }))
     .subscribe(books => {
+      this.isFetching = false;
       this.loadedBooks = books;
     })
   }

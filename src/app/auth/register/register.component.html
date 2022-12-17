@@ -1,7 +1,10 @@
 <div class="container">
     <div class="form-container">
+        <div *ngIf="isLoading">
+            <app-loading-spinner></app-loading-spinner>
+        </div>
         <div class="title">Create Account</div>
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
             <mat-form-field appearance="outline">
                 <mat-label>Enter username</mat-label>
                 <input matInput formControlName="username">

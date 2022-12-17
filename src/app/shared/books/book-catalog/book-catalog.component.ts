@@ -12,6 +12,7 @@ export class BookCatalogComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   loadedBooks = this.bookService.loadedBooks;
+  isFetching = false;
   
   ngOnInit() {
     this.bookService.fetchBooks();

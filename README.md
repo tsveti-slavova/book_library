@@ -1,7 +1,7 @@
 # BookLibrary1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
-The project represents book library. Users can register and login with username and password. They can look throught the books in the library and search through them. Also they can add new book to the library. Firebase is used for back-end solution both for storing the users and for storing the books.
+The project represents book library. Users can register and login with username and password. They can look through the books in the library and search through them. Also they can add new book to the library. Firebase is used for back-end solution both for storing the users and for storing the books.
 
 ## Development server
 
